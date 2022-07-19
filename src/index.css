@@ -1,0 +1,394 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  width: 100%;
+  height: 70px;
+  padding: 20px;
+  grid-area: header;
+  background-color: #0b0b0d;
+  border-bottom: solid black 1px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-title {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 26px;
+  font-weight: 600;
+  text-align: center;
+  color: #171;
+}
+
+.header-logo {
+  height: 30px;
+  opacity: .77;
+}
+
+.header-logo:hover {
+  box-shadow: 0px 0px 20px #070;
+}
+
+.media-links {
+  width: 200px;
+  height: 70px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.media-symbol {
+  width: 40px;
+  height: 40px;
+  font-size: 22px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.media-symbol:hover {
+  box-shadow: 0px 0px 20px #070;
+}
+
+.header-logo-div {
+  width: 200px;
+}
+
+.notebook-bar {
+  width: 100%;
+  height: 45px;
+  grid-area: notebookBar;
+  border-bottom: solid black 1px;
+  background-color: #0c0c0f;
+  display: flex;
+  overflow: scroll;
+}
+
+
+.viewport {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid: [row1-start] "header header" 70px [row1-end]
+        [row2-start] "notebookBar notebookBar" 45px [row2-end]
+        [row3-start] "notesPanel noteArea" auto [row3-end] 
+        / 500px auto;
+  background-color: #030303;
+  margin: 0;
+  padding: 0;
+  overflow: clip;
+}
+
+.hidden {
+  display: none;
+}
+
+/* --- NOTEBOOK STUFF --- --- NOTEBOOK STUFF --- --- NOTEBOOK STUFF --- */
+
+.notebook-div {
+  width: 240px;
+  min-width: 24 0px;
+  padding: 0 5px 0 5px;
+  height: 100%;
+  display: grid;
+  grid: [row1-start] "nbDelete nbTitle nbEdit" 100% [row1-end]
+        / 15% 70% 15%;
+  align-items: center;
+  background-color: #14141b;
+  text-overflow: ellipsis;
+  border: none;
+  border-right: solid black 1px;
+  outline: none;
+}
+
+.notebook-div-selected {
+  width: 240px;
+  min-width: 24 0px;
+  padding: 0 5px 0 5px;
+  height: 100%;
+  display: grid;
+  grid: [row1-start] "nbDelete nbTitle nbEdit" 100% [row1-end]
+        / 15% 70% 15%;
+  align-items: center;
+  background-color: #101b10;
+  text-overflow: ellipsis;
+  border: none;
+  border-right: solid black 1px;
+  outline: none;
+}
+
+.notebook-div:hover {
+  background: #101610;
+}
+
+.notebook-div-selected:hover {
+  background: #091c09;
+}
+
+.notebook-title {
+  width: 100%;
+  text-align: center;
+  color: #33aa33;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  grid-area: nbTitle;
+  user-select: none;
+}
+
+.notebook-input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  background: none;
+  grid-area: nbTitle;
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #33aa33;
+}
+
+
+.notebook-controls {
+  width: 100%;
+  padding-top: 5px;
+  font-family: 'Noto Sans Symbols 2', sans-serif;
+  font-size: 16px;
+  color: #33aa33;
+  background: none;
+  border: none;
+  border-radius: 5px;
+}
+
+.notebook-controls:hover {
+  background: #0b0b10;
+  border: solid #222 1px;
+}
+.add-notebook-btn {
+  color: #ccc;
+  background: none;
+  width: 45px;
+  min-width: 45px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-right: solid black 1px;
+  outline: none;
+  user-select: none;
+}
+
+.add-notebook-btn:hover {
+  background-color: #101510;
+}
+
+
+/* --- NOTE AREA STUFF --- --- NOTE AREA STUFF --- --- NOTE AREA STUFF --- */
+
+.note-area {
+  width: 100%;
+  height: 100%;
+  grid-area: noteArea;
+  background-color: #08080a;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.na-title {
+  width: 100%;
+  height: 120px;
+  display: grid;
+  grid: [row1-start] "naDate naTitle naControls" [row1-end]
+  / 300px auto 300px;
+  align-items: center;
+}
+
+.nat-date-div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  color: #171;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  grid-area: naDate;
+}
+
+.nat-title {
+  width: 100%;
+  height: 44px;
+  border: solid black 1px;
+  outline: none;
+  color: #171;
+  grid-area: naTitle;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 20px;
+  padding: 10px;
+  text-align: center;
+  background-color: #131319
+}
+
+.nat-controls-div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.nat-controls {
+  width: 50px;
+  height: 50px;
+  background: none;
+  border: none;
+  border-radius: 5px;
+  color: #191;
+  position: relative;
+  padding-top: 7px;
+  font-family: 'Noto Sans Symbols 2', sans-serif;
+  font-size: 22px;
+}
+
+.nat-controls:hover {
+  background: #121218;
+}
+
+.na-body-div {
+  width: 100%;
+  height: 100%;
+  padding: 8px;
+  grid-area: naControls;
+}
+
+.na-body {
+  width: 100%;
+  height: 100%;
+  background: none;
+  border: solid #111 2px;
+  padding: 7px;
+  color: #191;
+  outline: none;
+  resize: none;
+}
+
+
+/* --- NOTE STUFF --- --- NOTE STUFF --- --- NOTE STUFF --- --- NOTE STUFF --- */
+
+.notes-panel {
+  width: 100%;
+  height: 100%;
+  border-right: solid black 1px;
+  grid-area: notesPanel;
+  background-color: #0b0b0f;
+  overflow: scroll;
+}
+
+.note-div {
+  width: 100%;
+  height: 120px;
+  display: grid;
+  grid: [row1-start] "date preview" 100% [row1-end]
+        / 120px auto;
+  border-bottom: solid black 1px;
+  background-color: #0f0f17;
+}
+
+.note-div:hover {
+  background-color: #0a100a;
+}
+
+.note-date-div {
+  width: 120px;
+  height: 100%; 
+  display: flex;
+  grid-area: date;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-right: solid #070707 1px;
+  user-select: none;
+}
+
+.note-date-my {
+  color: #292;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  user-select: none;
+}
+
+.note-date-day {
+  color: #292;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 700;
+  font-size: 19px;
+  user-select: none;
+}
+
+.note-preview-wrapper {
+  width: 100%;
+  height: 100%;
+  grid-area: preview;
+  padding: 10px;
+}
+
+.note-preview-div {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+
+.note-preview-title {
+  width: 100%;
+  height: 22px;
+  text-align: center;
+  color: #292;
+  user-select: none;
+}
+
+.note-preview-body {
+  width: 100%;
+  height: 88px;
+  line-height: 1.2;
+  color: #444;
+  font-size: 16px;
+  text-overflow: ellipsis;
+  user-select: none;
+}
+
+.add-note-btn {
+  color: #ccc;
+  background: none;
+  width: 100%;
+  height: 45px;
+  min-height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-bottom: solid black 1px;
+  outline: none;
+  user-select: none;
+}
+
+.add-note-btn:hover {
+  background-color: #0a130a;
+}
