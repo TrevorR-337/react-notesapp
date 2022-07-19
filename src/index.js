@@ -247,7 +247,7 @@ class App extends React.Component {
           <div className='header-logo-div'>
             <img src={folder} className='header-logo' alt='logo'/>
           </div>
-          <h1 className='header-title'>Notes App</h1>
+          <h1 className='header-title'>React Notes App</h1>
           <div className='media-links'>
             <span className='media-symbol' role="img" aria-label='boop'>📬</span>
             <span className='media-symbol' role="img" aria-label='boop'>📚</span>
